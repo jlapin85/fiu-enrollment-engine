@@ -18,6 +18,30 @@
   }
 </style>
 
+<style id="mobile-opt">
+  html,body{ overflow-x:hidden; }
+  @media (max-width:768px){
+    .canvas{ padding:14px 9px !important; }
+    .sheet{ padding:30px 20px !important; min-height:auto !important; }
+    /* collapse multi-column grids */
+    [style*="grid-template-columns:repeat(5,1fr)"]{ grid-template-columns:repeat(2,1fr) !important; }
+    [style*="grid-template-columns:repeat(4,1fr)"]{ grid-template-columns:repeat(2,1fr) !important; }
+    [style*="grid-template-columns:repeat(3,1fr)"]{ grid-template-columns:1fr !important; }
+    [style*="grid-template-columns:1fr 1fr 1fr"]{ grid-template-columns:1fr !important; }
+    [style*="grid-template-columns:1fr 1fr;"]{ grid-template-columns:1fr !important; }
+    [style*="grid-template-columns:1.05fr 1fr"]{ grid-template-columns:1fr !important; }
+    [style*="grid-template-columns:64px 1fr"]{ grid-template-columns:42px 1fr !important; gap:14px !important; }
+    [style*="min-width:280px"]{ min-width:0 !important; }
+    /* scale display type */
+    [style*="font-size:72px"]{ font-size:38px !important; }
+    [style*="font-size:48px"]{ font-size:30px !important; }
+    [style*="font-size:32px"]{ font-size:23px !important; }
+    /* cover footer band: remove the 72px gutter that assumes desktop padding */
+    [style*="margin:0 -72px"]{ margin:0 -20px !important; padding:20px !important; }
+    /* let any wide media/strips wrap rather than overflow */
+    img{ max-width:100% !important; height:auto; }
+  }
+</style>
 </head>
 <body>
 <div class="canvas" style="font-family:'Roboto',system-ui,sans-serif; color:#03030D; background:#DED8CC; min-height:100vh; padding:40px 20px; font-size:15.5px; line-height:1.62;">
