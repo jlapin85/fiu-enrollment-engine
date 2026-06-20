@@ -25,10 +25,12 @@
 
 <style id="mobile-opt">
   html,body{ overflow-x:hidden; }
+  .tbl-wrap{ overflow-x:auto; -webkit-overflow-scrolling:touch; min-width:0; }
+  [style*="display:grid"] > *{ min-width:0; }
+  .tbl-wrap th, .tbl-wrap td{ white-space:nowrap; }
   @media (max-width:768px){
     nav{ padding:12px 16px !important; gap:12px !important; }
     .navlink{ display:none !important; }
-    /* collapse grids */
     [style*="grid-template-columns:repeat(5,1fr)"]{ grid-template-columns:repeat(2,1fr) !important; }
     [style*="grid-template-columns:repeat(4,1fr)"]{ grid-template-columns:repeat(2,1fr) !important; }
     [style*="grid-template-columns:repeat(3,1fr)"]{ grid-template-columns:1fr !important; }
@@ -36,7 +38,6 @@
     [style*="grid-template-columns:1fr 1fr;"]{ grid-template-columns:1fr !important; }
     [style*="grid-template-columns:1.05fr 1fr"]{ grid-template-columns:1fr !important; }
     [style*="grid-template-columns:72px 1fr"]{ grid-template-columns:42px 1fr !important; gap:14px !important; }
-    /* scale display type */
     [style*="font-size:80px"]{ font-size:40px !important; }
     [style*="font-size:66px"]{ font-size:34px !important; }
     [style*="font-size:52px"]{ font-size:30px !important; }
@@ -44,11 +45,7 @@
     [style*="font-size:38px"]{ font-size:25px !important; }
     [style*="font-size:34px"]{ font-size:24px !important; }
     [style*="font-size:32px"]{ font-size:23px !important; }
-    /* tighten oversized section padding */
     [style*="padding:96px 24px"]{ padding:48px 18px !important; }
-    /* program table fits small screens */
-    table{ font-size:11px !important; }
-    table td, table th{ padding:6px 7px !important; }
     [style*="min-width:280px"]{ min-width:0 !important; }
     img{ max-width:100% !important; height:auto; }
   }
@@ -88,8 +85,9 @@
     <div style="border-top:1px solid #3E7A91;">
       <div style="max-width:1120px; margin:0 auto; padding:22px 24px; display:flex; justify-content:space-between; align-items:center; gap:24px; flex-wrap:wrap;">
         <div>
-          <div style="font-family:'Roboto Mono',ui-monospace,monospace; font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:#A9C2CF; margin-bottom:5px;">Prepared For</div>
-          <div style="font-family:'Oswald',sans-serif; font-weight:500; font-size:18px; color:#fff;">FIU Office of Continuing Education</div>
+          <div style="font-family:'Roboto Mono',ui-monospace,monospace; font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:#A9C2CF; margin-bottom:10px;">Prepared For</div>
+          <img src="assets/fiu-logo-white.svg" alt="Florida International University" style="height:30px; width:auto; display:block; margin-bottom:9px;">
+          <div style="font-family:'Oswald',sans-serif; font-weight:500; font-size:16px; color:#fff;">Office of Continuing Education</div>
         </div>
         <div style="text-align:right;">
           <div style="font-family:'Roboto Mono',ui-monospace,monospace; font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:#A9C2CF; margin-bottom:5px;">From</div>
@@ -240,7 +238,24 @@
         </div>
         <div>
           <h3 style="font-family:'Oswald',sans-serif; font-weight:600; font-size:26px; color:#024059; margin:0 0 10px;">Demand <span style="font-family:'Cardo',Georgia,serif; font-style:italic; font-weight:400; font-size:20px; color:#3E7A91;">— the paid engine</span></h3>
-          <p style="margin:0 0 18px; max-width:66ch;">We reverse-engineer the channel mix from each program's enrollment goal — not the other way around — and run paid media across every channel that clears the cost-per-enrollment guardrail.</p>
+          <p style="margin:0 0 22px; max-width:66ch;">We reverse-engineer the channel mix from each program's enrollment goal — not the other way around — and run paid media across every channel that clears the cost-per-enrollment guardrail.</p>
+          <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin:0 0 26px;">
+            <div style="background:#E4EEF6; border-radius:8px; padding:22px 24px 24px;">
+              <div style="font-family:'Oswald',sans-serif; font-weight:600; font-size:38px; color:#024059; line-height:1;">200+</div>
+              <div style="font-family:'Roboto Mono',ui-monospace,monospace; font-size:10.5px; letter-spacing:.1em; text-transform:uppercase; color:#0078A6; margin:9px 0 8px;">Programs Managed</div>
+              <p style="font-size:13px; line-height:1.5; color:#013042; margin:0;">Graduate programs, undergraduate recruitment, certificates, continuing ed — campaigns across every format higher ed has to offer. That depth means fewer surprises and a faster path to outcomes.</p>
+            </div>
+            <div style="background:#E4EEF6; border-radius:8px; padding:22px 24px 24px;">
+              <div style="font-family:'Oswald',sans-serif; font-weight:600; font-size:38px; color:#024059; line-height:1;">$150M+</div>
+              <div style="font-family:'Roboto Mono',ui-monospace,monospace; font-size:10.5px; letter-spacing:.1em; text-transform:uppercase; color:#0078A6; margin:9px 0 8px;">Budget Managed</div>
+              <p style="font-size:13px; line-height:1.5; color:#013042; margin:0;">Whether $10K a month or $10M a year, every dollar gets the same attention and rigor. No tiers of care — campaigns are built and optimized with the same discipline regardless of where your budget sits.</p>
+            </div>
+            <div style="background:#E4EEF6; border-radius:8px; padding:22px 24px 24px;">
+              <div style="font-family:'Oswald',sans-serif; font-weight:600; font-size:38px; color:#024059; line-height:1;">7+</div>
+              <div style="font-family:'Roboto Mono',ui-monospace,monospace; font-size:10.5px; letter-spacing:.1em; text-transform:uppercase; color:#0078A6; margin:9px 0 8px;">Avg. Client Tenure</div>
+              <p style="font-size:13px; line-height:1.5; color:#013042; margin:0;">Our average client has been with us for more than seven years. That's not a streak of luck — it's what happens when a team consistently earns the right to keep the relationship.</p>
+            </div>
+          </div>
           <div style="font-family:'Roboto Mono',ui-monospace,monospace; font-size:10.5px; letter-spacing:.12em; text-transform:uppercase; color:#0078A6; margin-bottom:14px;">What lands</div>
           <div style="display:grid; grid-template-columns:1fr 1fr; gap:13px 32px;">
             <div style="display:flex; gap:12px;"><span style="flex:none; width:7px; height:7px; background:#00AEEF; margin-top:7px;"></span><span style="font-size:14.5px; line-height:1.45;"><strong style="color:#024059;">Paid advertising across multiple channels</strong> (search, social, and more), weighted to each program's economics.</span></div>
@@ -248,7 +263,36 @@
             <div style="display:flex; gap:12px;"><span style="flex:none; width:7px; height:7px; background:#00AEEF; margin-top:7px;"></span><span style="font-size:14.5px; line-height:1.45;"><strong style="color:#024059;">Three dedicated paid buyers</strong> on your account, plus <strong style="color:#024059;">senior paid-media consulting</strong>.</span></div>
             <div style="display:flex; gap:12px;"><span style="flex:none; width:7px; height:7px; background:#00AEEF; margin-top:7px;"></span><span style="font-size:14.5px; line-height:1.45;"><strong style="color:#024059;">Weekly budget reallocation</strong> toward what's clearing the guardrail — away from what isn't.</span></div>
           </div>
-          <div style="background:#013042; border-radius:2px; padding:20px 24px; margin-top:20px;">
+          <h4 style="font-family:'Oswald',sans-serif; font-weight:600; font-size:21px; color:#024059; margin:30px 0 16px;">What FIU gets from the paid media team.</h4>
+          <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-bottom:18px;">
+            <div style="background:#E4EEF6; border-radius:8px; padding:20px 22px 22px;">
+              <div style="font-weight:700; font-size:14.5px; color:#024059; margin-bottom:8px;">Clarity over complexity</div>
+              <p style="font-size:13px; line-height:1.5; color:#013042; margin:0;">Clean logic, clear reporting, answers you can act on. No black boxes, no bloated decks. A straight read on what's working and what we're doing about it.</p>
+            </div>
+            <div style="background:#E4EEF6; border-radius:8px; padding:20px 22px 22px;">
+              <div style="font-weight:700; font-size:14.5px; color:#024059; margin-bottom:8px;">Speed matched by reality</div>
+              <p style="font-size:13px; line-height:1.5; color:#013042; margin:0;">When you need things moved quickly, we move. When they need to be done right, we slow down just enough to get there. We don't sacrifice strategy for speed.</p>
+            </div>
+            <div style="background:#E4EEF6; border-radius:8px; padding:20px 22px 22px;">
+              <div style="font-weight:700; font-size:14.5px; color:#024059; margin-bottom:8px;">Full funnel storytellers</div>
+              <p style="font-size:13px; line-height:1.5; color:#013042; margin:0;">We think through the entire student journey, from first impression to final enrollment. Every touchpoint is intentional and connects to the next.</p>
+            </div>
+          </div>
+          <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:18px;">
+            <div style="background:#CBDFEC; border-radius:8px; padding:20px 22px 22px;">
+              <div style="font-weight:700; font-size:14.5px; color:#024059; margin-bottom:8px;">Scaling with AI</div>
+              <p style="font-size:13px; line-height:1.5; color:#013042; margin:0;">Our agentic AI layer continuously monitors performance, surfaces insights, and optimizes every campaign in real time so every dollar works harder.</p>
+            </div>
+            <div style="background:#CBDFEC; border-radius:8px; padding:20px 22px 22px;">
+              <div style="font-weight:700; font-size:14.5px; color:#024059; margin-bottom:8px;">Partners, not vendors</div>
+              <p style="font-size:13px; line-height:1.5; color:#013042; margin:0;">We embed ourselves in your goals and your success. From strategy through enrollment, we stay in it with you and treat every win as a shared one.</p>
+            </div>
+            <div style="background:#CBDFEC; border-radius:8px; padding:20px 22px 22px;">
+              <div style="font-weight:700; font-size:14.5px; color:#024059; margin-bottom:8px;">Senior-level team</div>
+              <p style="font-size:13px; line-height:1.5; color:#013042; margin:0;">Every person on your account is senior. No juniors learning on your budget. The strategists who pitch you are the ones optimizing your campaigns every day.</p>
+            </div>
+          </div>
+          <div style="background:#013042; border-radius:2px; padding:20px 24px; margin-top:26px;">
             <div style="font-family:'Roboto Mono',ui-monospace,monospace; font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:#A9C2CF; margin-bottom:12px;">Proof — Our Paid Team's University of Colorado Partnership</div>
             <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:18px;">
               <div><div style="font-family:'Oswald',sans-serif; font-weight:600; font-size:24px; color:#00AEEF; line-height:1;">7+ yrs</div><div style="font-size:11.5px; color:#E3EDF2; margin-top:5px; line-height:1.35;">University partner since 2018</div></div>
@@ -256,6 +300,10 @@
               <div><div style="font-family:'Oswald',sans-serif; font-weight:600; font-size:24px; color:#00AEEF; line-height:1;">+37%</div><div style="font-size:11.5px; color:#E3EDF2; margin-top:5px; line-height:1.35;">Click-to-lead lift YoY</div></div>
               <div><div style="font-family:'Oswald',sans-serif; font-weight:600; font-size:24px; color:#00AEEF; line-height:1;">−20%</div><div style="font-size:11.5px; color:#E3EDF2; margin-top:5px; line-height:1.35;">Cost-per-lead YoY, on $375K+/mo managed</div></div>
             </div>
+          </div>
+          <div style="font-family:'Roboto Mono',ui-monospace,monospace; font-size:10.5px; letter-spacing:.12em; text-transform:uppercase; color:#0078A6; margin:28px 0 14px;">Clients &amp; Institutions Served</div>
+          <div style="background:#fff; border:1px solid #DED8CC; border-radius:6px; padding:22px 20px;">
+            <div style="display:flex; flex-wrap:wrap; gap:10px 20px; align-items:center;"><span style="font-family:'Oswald',sans-serif; font-weight:500; font-size:13.5px; color:#3E7A91;">University of Central Florida</span><span style="font-family:'Oswald',sans-serif; font-weight:500; font-size:13.5px; color:#3E7A91;">University of Virginia</span><span style="font-family:'Oswald',sans-serif; font-weight:500; font-size:13.5px; color:#3E7A91;">Tulane University</span><span style="font-family:'Oswald',sans-serif; font-weight:500; font-size:13.5px; color:#3E7A91;">VCU</span><span style="font-family:'Oswald',sans-serif; font-weight:500; font-size:13.5px; color:#3E7A91;">Catherine Hershey Schools</span><span style="font-family:'Oswald',sans-serif; font-weight:500; font-size:13.5px; color:#3E7A91;">CU Anschutz</span><span style="font-family:'Oswald',sans-serif; font-weight:500; font-size:13.5px; color:#3E7A91;">Moravian University</span><span style="font-family:'Oswald',sans-serif; font-weight:500; font-size:13.5px; color:#3E7A91;">East Tennessee State University</span><span style="font-family:'Oswald',sans-serif; font-weight:500; font-size:13.5px; color:#3E7A91;">Golden Gate University</span><span style="font-family:'Oswald',sans-serif; font-weight:500; font-size:13.5px; color:#3E7A91;">Ziplines Education</span><span style="font-family:'Oswald',sans-serif; font-weight:500; font-size:13.5px; color:#3E7A91;">University of Colorado</span><span style="font-family:'Oswald',sans-serif; font-weight:500; font-size:13.5px; color:#3E7A91;">Shawnee State University</span><span style="font-family:'Oswald',sans-serif; font-weight:500; font-size:13.5px; color:#3E7A91;">American University</span><span style="font-family:'Oswald',sans-serif; font-weight:500; font-size:13.5px; color:#3E7A91;">Milton Hershey School</span><span style="font-family:'Oswald',sans-serif; font-weight:500; font-size:13.5px; color:#3E7A91;">Kean University</span></div>
           </div>
         </div>
       </div>
@@ -299,11 +347,12 @@
           </div>
           <div style="margin-top:24px;">
             <div style="font-family:'Roboto Mono',ui-monospace,monospace; font-size:10.5px; letter-spacing:.12em; text-transform:uppercase; color:#EA3C55; margin-bottom:11px;">What it looks like</div>
-            <div style="border:1px solid #DED8CC; border-radius:6px; overflow:hidden; box-shadow:0 1px 4px rgba(1,30,42,0.1); background:#fff;">
-              <div style="background:#011E2B; padding:11px 16px; display:flex; align-items:center; justify-content:space-between; gap:8px; flex-wrap:wrap;">
-                <div style="display:flex; align-items:center; gap:10px;">
-                  <span style="width:24px; height:24px; border-radius:5px; background:#EA3C55; color:#fff; font-family:'Oswald',sans-serif; font-weight:600; font-size:10px; display:flex; align-items:center; justify-content:center;">FIU</span>
-                  <span style="font-family:'Oswald',sans-serif; font-weight:500; color:#fff; font-size:14px; letter-spacing:.02em;">Enrollment Engine · Live Dashboard</span>
+            <div style="border:1px solid #DED8CC; border-radius:6px; max-height:440px; overflow:auto; box-shadow:0 1px 4px rgba(1,30,42,0.1); background:#fff;">
+              <div style="background:#011E2B; padding:12px 16px; display:flex; align-items:center; justify-content:space-between; gap:8px; flex-wrap:wrap;">
+                <div style="display:flex; align-items:center; gap:11px;">
+                  <img src="assets/fiu-mark-white.svg" alt="FIU" style="height:20px; width:auto; display:block;">
+                  <span style="width:1px; height:18px; background:#3E7A91; flex:none;"></span>
+                  <span style="font-family:'Oswald',sans-serif; font-weight:500; color:#fff; font-size:14px; letter-spacing:.02em;">Enrollment Reporting Dashboard</span>
                 </div>
                 <div style="display:flex; gap:8px; align-items:center;">
                   <span style="font-family:'Roboto Mono',ui-monospace,monospace; font-size:8.5px; letter-spacing:.08em; background:#0078A6; color:#fff; padding:3px 8px; border-radius:20px;">SAMPLE DATA</span>
@@ -311,50 +360,285 @@
                 </div>
               </div>
               <div style="display:flex; gap:7px; padding:11px 16px; border-bottom:1px solid #DED8CC; flex-wrap:wrap;">
-                <span style="font-family:'Roboto Mono',ui-monospace,monospace; font-size:9.5px; color:#6B7684; border:1px solid #DED8CC; border-radius:4px; padding:4px 9px;">All channels ▾</span>
-                <span style="font-family:'Roboto Mono',ui-monospace,monospace; font-size:9.5px; color:#6B7684; border:1px solid #DED8CC; border-radius:4px; padding:4px 9px;">All programs ▾</span>
-                <span style="font-family:'Roboto Mono',ui-monospace,monospace; font-size:9.5px; color:#6B7684; border:1px solid #DED8CC; border-radius:4px; padding:4px 9px;">All campaigns ▾</span>
+                <span style="font-family:'Roboto Mono',ui-monospace,monospace; font-size:9.5px; color:#6B7684; border:1px solid #DED8CC; border-radius:4px; padding:4px 9px;">Channel · All channels ▾</span>
+                <span style="font-family:'Roboto Mono',ui-monospace,monospace; font-size:9.5px; color:#6B7684; border:1px solid #DED8CC; border-radius:4px; padding:4px 9px;">Program · All programs ▾</span>
+                <span style="font-family:'Roboto Mono',ui-monospace,monospace; font-size:9.5px; color:#6B7684; border:1px solid #DED8CC; border-radius:4px; padding:4px 9px;">Campaign · All campaigns ▾</span>
                 <span style="font-family:'Roboto Mono',ui-monospace,monospace; font-size:9.5px; color:#6B7684; border:1px solid #DED8CC; border-radius:4px; padding:4px 9px;">Oct 2025 – Jun 2026 ▾</span>
               </div>
               <div style="display:grid; grid-template-columns:repeat(5,1fr); gap:1px; background:#DED8CC;">
                 <div style="background:#fff; padding:13px 14px;"><div style="font-family:'Roboto Mono',ui-monospace,monospace; font-size:8px; letter-spacing:.06em; color:#6B7684;">TOTAL SPEND</div><div style="font-family:'Oswald',sans-serif; font-weight:600; font-size:22px; color:#024059; margin-top:3px;">$480K</div><div style="font-size:8.5px; color:#6B7684; margin-top:2px;">flat by design</div></div>
-                <div style="background:#fff; padding:13px 14px;"><div style="font-family:'Roboto Mono',ui-monospace,monospace; font-size:8px; letter-spacing:.06em; color:#6B7684;">LEADS</div><div style="font-family:'Oswald',sans-serif; font-weight:600; font-size:22px; color:#024059; margin-top:3px;">4,312</div><div style="font-size:8.5px; color:#0078A6; margin-top:2px;">↑ 22% vs prior</div></div>
-                <div style="background:#fff; padding:13px 14px;"><div style="font-family:'Roboto Mono',ui-monospace,monospace; font-size:8px; letter-spacing:.06em; color:#6B7684;">APPLICATIONS</div><div style="font-family:'Oswald',sans-serif; font-weight:600; font-size:22px; color:#024059; margin-top:3px;">640</div><div style="font-size:8.5px; color:#0078A6; margin-top:2px;">14.8% lead→app</div></div>
-                <div style="background:#fff; padding:13px 14px;"><div style="font-family:'Roboto Mono',ui-monospace,monospace; font-size:8px; letter-spacing:.06em; color:#6B7684;">ENROLLMENTS</div><div style="font-family:'Oswald',sans-serif; font-weight:600; font-size:22px; color:#024059; margin-top:3px;">222</div><div style="font-size:8.5px; color:#0078A6; margin-top:2px;">+38% net-new</div></div>
-                <div style="background:#fff; padding:13px 14px;"><div style="font-family:'Roboto Mono',ui-monospace,monospace; font-size:8px; letter-spacing:.06em; color:#6B7684;">BLENDED CAC</div><div style="font-family:'Oswald',sans-serif; font-weight:600; font-size:22px; color:#024059; margin-top:3px;">$2,159</div><div style="font-size:8.5px; color:#0078A6; margin-top:2px;">↓ 18% YoY</div></div>
+                <div style="background:#fff; padding:13px 14px;"><div style="font-family:'Roboto Mono',ui-monospace,monospace; font-size:8px; letter-spacing:.06em; color:#6B7684;">TOTAL LEADS</div><div style="font-family:'Oswald',sans-serif; font-weight:600; font-size:22px; color:#024059; margin-top:3px;">4,312</div><div style="font-size:8.5px; color:#0078A6; margin-top:2px;">↑ 22% vs prior</div></div>
+                <div style="background:#fff; padding:13px 14px;"><div style="font-family:'Roboto Mono',ui-monospace,monospace; font-size:8px; letter-spacing:.06em; color:#6B7684;">QUALIFIED LEADS</div><div style="font-family:'Oswald',sans-serif; font-weight:600; font-size:22px; color:#024059; margin-top:3px;">2,317</div><div style="font-size:8.5px; color:#6B7684; margin-top:2px;">53.7% qual. rate</div></div>
+                <div style="background:#fff; padding:13px 14px;"><div style="font-family:'Roboto Mono',ui-monospace,monospace; font-size:8px; letter-spacing:.06em; color:#6B7684;">APP COMPLETES</div><div style="font-family:'Oswald',sans-serif; font-weight:600; font-size:22px; color:#024059; margin-top:3px;">640</div><div style="font-size:8.5px; color:#0078A6; margin-top:2px;">↑ 18% vs prior</div></div>
+                <div style="background:#fff; padding:13px 14px;"><div style="font-family:'Roboto Mono',ui-monospace,monospace; font-size:8px; letter-spacing:.06em; color:#6B7684;">ENROLLMENTS</div><div style="font-family:'Oswald',sans-serif; font-weight:600; font-size:22px; color:#024059; margin-top:3px;">222</div><div style="font-size:8.5px; color:#0078A6; margin-top:2px;">on pace to target</div></div>
               </div>
-              <div style="display:flex; gap:18px; padding:10px 16px; border-bottom:1px solid #DED8CC;">
+              <div style="display:flex; gap:18px; padding:10px 16px; border-bottom:1px solid #DED8CC; flex-wrap:wrap;">
                 <span style="font-family:'Oswald',sans-serif; font-weight:600; font-size:12px; color:#024059; border-bottom:2px solid #00AEEF; padding-bottom:5px;">Performance</span>
                 <span style="font-family:'Oswald',sans-serif; font-weight:500; font-size:12px; color:#6B7684; padding-bottom:5px;">Funnel</span>
                 <span style="font-family:'Oswald',sans-serif; font-weight:500; font-size:12px; color:#6B7684; padding-bottom:5px;">Creative</span>
                 <span style="font-family:'Oswald',sans-serif; font-weight:500; font-size:12px; color:#6B7684; padding-bottom:5px;">Organic / SEO</span>
                 <span style="font-family:'Oswald',sans-serif; font-weight:500; font-size:12px; color:#6B7684; padding-bottom:5px;">Pacing</span>
+                <span style="font-family:'Oswald',sans-serif; font-weight:600; font-size:12px; color:#EA3C55; padding-bottom:5px; display:flex; align-items:center; gap:5px;"><span style="width:6px; height:6px; border-radius:50%; background:#EA3C55;"></span>Panther AI</span>
               </div>
-              <div style="display:grid; grid-template-columns:1.05fr 1fr; gap:20px; padding:16px;">
-                <div>
-                  <div style="font-family:'Roboto Mono',ui-monospace,monospace; font-size:8.5px; letter-spacing:.06em; color:#6B7684; margin-bottom:10px;">FULL FUNNEL · IMPRESSION → ENROLLED</div>
-                  <div style="margin-bottom:9px;"><div style="display:flex; justify-content:space-between; font-size:10px; margin-bottom:2px;"><span style="color:#013042;">Impressions</span><span style="font-family:'Roboto Mono',ui-monospace,monospace; color:#024059;">2.41M</span></div><div style="height:17px; width:100%; background:#024059;"></div></div>
-                  <div style="margin-bottom:9px;"><div style="display:flex; justify-content:space-between; font-size:10px; margin-bottom:2px;"><span style="color:#013042;">Leads</span><span style="font-family:'Roboto Mono',ui-monospace,monospace; color:#024059;">4,312</span></div><div style="height:17px; width:74%; background:#024059;"></div></div>
-                  <div style="margin-bottom:9px;"><div style="display:flex; justify-content:space-between; font-size:10px; margin-bottom:2px;"><span style="color:#013042;">Applications</span><span style="font-family:'Roboto Mono',ui-monospace,monospace; color:#024059;">640</span></div><div style="height:17px; width:54%; background:#3E7A91;"></div></div>
-                  <div style="margin-bottom:9px;"><div style="display:flex; justify-content:space-between; font-size:10px; margin-bottom:2px;"><span style="color:#013042;">Admits</span><span style="font-family:'Roboto Mono',ui-monospace,monospace; color:#024059;">410</span></div><div style="height:17px; width:40%; background:#3E7A91;"></div></div>
-                  <div><div style="display:flex; justify-content:space-between; font-size:10px; margin-bottom:2px;"><span style="color:#013042; font-weight:700;">Enrolled</span><span style="font-family:'Roboto Mono',ui-monospace,monospace; color:#0078A6; font-weight:700;">222</span></div><div style="height:17px; width:28%; background:#00AEEF;"></div></div>
-                </div>
-                <div>
-                  <div style="font-family:'Roboto Mono',ui-monospace,monospace; font-size:8.5px; letter-spacing:.06em; color:#6B7684; margin-bottom:10px;">BLENDED CAC TREND · FALLING</div>
-                  <div style="display:flex; align-items:flex-end; gap:7px; height:100px; border-bottom:1px solid #DED8CC;">
-                    <div style="flex:1; background:#A9C2CF; height:88px;"></div>
-                    <div style="flex:1; background:#3E7A91; height:78px;"></div>
-                    <div style="flex:1; background:#3E7A91; height:70px;"></div>
-                    <div style="flex:1; background:#0078A6; height:60px;"></div>
-                    <div style="flex:1; background:#0078A6; height:52px;"></div>
-                    <div style="flex:1; background:#00AEEF; height:44px;"></div>
+              <div style="padding:16px;">
+                <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:10px; margin-bottom:12px;">
+                  <div>
+                    <div style="font-family:'Roboto Mono',ui-monospace,monospace; font-size:8.5px; letter-spacing:.06em; color:#6B7684;">LEAD VOLUME &amp; CPL TREND</div>
+                    <div style="font-size:9.5px; color:#6B7684; margin-top:3px;">May 18 – Jun 14 &nbsp;vs.&nbsp; Apr 20 – May 17, 2026</div>
                   </div>
-                  <div style="display:flex; justify-content:space-between; margin-top:6px;"><span style="font-family:'Roboto Mono',ui-monospace,monospace; font-size:8.5px; color:#6B7684;">Q1</span><span style="font-family:'Roboto Mono',ui-monospace,monospace; font-size:8.5px; color:#6B7684;">Q6</span></div>
-                  <div style="margin-top:9px; font-size:10.5px; color:#013042; line-height:1.45;">Latest blended CAC <strong style="color:#024059;">$2,159</strong> — down every quarter on flat spend.</div>
+                  <div style="display:flex; gap:22px;">
+                    <div><div style="font-family:'Roboto Mono',ui-monospace,monospace; font-size:8px; letter-spacing:.05em; color:#6B7684;">CURRENT LEAD VOLUME</div><div style="font-family:'Oswald',sans-serif; font-weight:600; font-size:18px; color:#024059;">612 <span style="font-family:'Roboto',sans-serif; font-weight:400; font-size:10px; color:#0078A6;">+31%</span></div></div>
+                    <div><div style="font-family:'Roboto Mono',ui-monospace,monospace; font-size:8px; letter-spacing:.05em; color:#6B7684;">WEIGHTED CPL</div><div style="font-family:'Oswald',sans-serif; font-weight:600; font-size:18px; color:#024059;">$111 <span style="font-family:'Roboto',sans-serif; font-weight:400; font-size:10px; color:#0078A6;">−24%</span></div></div>
+                  </div>
+                </div>
+                <div style="display:flex; align-items:flex-end; gap:14px; height:96px; border-bottom:1px solid #DED8CC; padding:0 4px;">
+                  <div style="flex:1; display:flex; align-items:flex-end; justify-content:center; gap:3px; height:100%;"><div style="width:11px; background:#A9C2CF; height:42px;"></div><div style="width:11px; background:#00AEEF; height:50px;"></div></div>
+                  <div style="flex:1; display:flex; align-items:flex-end; justify-content:center; gap:3px; height:100%;"><div style="width:11px; background:#A9C2CF; height:38px;"></div><div style="width:11px; background:#00AEEF; height:54px;"></div></div>
+                  <div style="flex:1; display:flex; align-items:flex-end; justify-content:center; gap:3px; height:100%;"><div style="width:11px; background:#A9C2CF; height:46px;"></div><div style="width:11px; background:#00AEEF; height:62px;"></div></div>
+                  <div style="flex:1; display:flex; align-items:flex-end; justify-content:center; gap:3px; height:100%;"><div style="width:11px; background:#A9C2CF; height:50px;"></div><div style="width:11px; background:#00AEEF; height:68px;"></div></div>
+                  <div style="flex:1; display:flex; align-items:flex-end; justify-content:center; gap:3px; height:100%;"><div style="width:11px; background:#A9C2CF; height:48px;"></div><div style="width:11px; background:#00AEEF; height:76px;"></div></div>
+                  <div style="flex:1; display:flex; align-items:flex-end; justify-content:center; gap:3px; height:100%;"><div style="width:11px; background:#A9C2CF; height:54px;"></div><div style="width:11px; background:#00AEEF; height:84px;"></div></div>
+                </div>
+                <div style="display:flex; align-items:center; gap:16px; margin-top:8px; flex-wrap:wrap;">
+                  <span style="display:flex; align-items:center; gap:5px; font-size:9px; color:#6B7684;"><span style="width:9px; height:9px; background:#00AEEF;"></span>Current leads</span>
+                  <span style="display:flex; align-items:center; gap:5px; font-size:9px; color:#6B7684;"><span style="width:9px; height:9px; background:#A9C2CF;"></span>Prior leads</span>
+                  <span style="font-size:9px; color:#6B7684; margin-left:auto; display:flex; align-items:center; gap:5px;"><span style="width:5px; height:5px; border-radius:50%; background:#EA3C55;"></span>Jun 8 · Application-deadline reminder launched</span>
+                </div>
+
+                <div style="display:flex; align-items:baseline; gap:10px; margin:22px 0 9px;">
+                  <span style="font-family:'Roboto Mono',ui-monospace,monospace; font-size:8.5px; letter-spacing:.06em; color:#024059; font-weight:500;">CHANNEL PERFORMANCE</span>
+                  <span style="font-size:8.5px; color:#6B7684;">Heat: CVR · CPL</span>
+                </div>
+                <div style="overflow-x:auto;">
+                <div class="tbl-wrap"><table style="width:100%; border-collapse:collapse; font-size:10px; white-space:nowrap;">
+                  <thead><tr style="background:#F2EEE7;">
+                    <th style="text-align:left; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; font-size:7.5px; letter-spacing:.04em; color:#6B7684; font-weight:500; border-bottom:1px solid #DED8CC;">CHANNEL</th>
+                    <th style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; font-size:7.5px; letter-spacing:.04em; color:#6B7684; font-weight:500; border-bottom:1px solid #DED8CC;">SPEND</th>
+                    <th style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; font-size:7.5px; letter-spacing:.04em; color:#6B7684; font-weight:500; border-bottom:1px solid #DED8CC;">CLICKS</th>
+                    <th style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; font-size:7.5px; letter-spacing:.04em; color:#6B7684; font-weight:500; border-bottom:1px solid #DED8CC;">CTR</th>
+                    <th style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; font-size:7.5px; letter-spacing:.04em; color:#6B7684; font-weight:500; border-bottom:1px solid #DED8CC;">CVR</th>
+                    <th style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; font-size:7.5px; letter-spacing:.04em; color:#6B7684; font-weight:500; border-bottom:1px solid #DED8CC;">LEADS</th>
+                    <th style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; font-size:7.5px; letter-spacing:.04em; color:#6B7684; font-weight:500; border-bottom:1px solid #DED8CC;">QUAL.</th>
+                    <th style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; font-size:7.5px; letter-spacing:.04em; color:#6B7684; font-weight:500; border-bottom:1px solid #DED8CC;">CPL</th>
+                    <th style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; font-size:7.5px; letter-spacing:.04em; color:#6B7684; font-weight:500; border-bottom:1px solid #DED8CC;">APPS</th>
+                    <th style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; font-size:7.5px; letter-spacing:.04em; color:#6B7684; font-weight:500; border-bottom:1px solid #DED8CC;">ENR.</th>
+                  </tr></thead>
+                  <tbody>
+                    <tr>
+                      <td style="text-align:left; padding:6px 9px; color:#024059; font-weight:700; border-bottom:1px solid #EFEBE3;">Google Search</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#013042; border-bottom:1px solid #EFEBE3;">$134K</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#013042; border-bottom:1px solid #EFEBE3;">9,400</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#013042; border-bottom:1px solid #EFEBE3;">2.3%</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; border-bottom:1px solid #EFEBE3; background:#E1F1F8; color:#035E80;">3.4%</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#013042; border-bottom:1px solid #EFEBE3;">1,280</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#013042; border-bottom:1px solid #EFEBE3;">760</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; border-bottom:1px solid #EFEBE3; color:#013042;">$105</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#013042; border-bottom:1px solid #EFEBE3;">196</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#024059; font-weight:700; border-bottom:1px solid #EFEBE3;">72</td>
+                    </tr>
+                    <tr>
+                      <td style="text-align:left; padding:6px 9px; color:#024059; font-weight:700; border-bottom:1px solid #EFEBE3;">Google PMax</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#013042; border-bottom:1px solid #EFEBE3;">$92K</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#013042; border-bottom:1px solid #EFEBE3;">6,100</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#013042; border-bottom:1px solid #EFEBE3;">0.34%</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; border-bottom:1px solid #EFEBE3; background:#E1F1F8; color:#035E80;">4.5%</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#013042; border-bottom:1px solid #EFEBE3;">1,040</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#013042; border-bottom:1px solid #EFEBE3;">520</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; border-bottom:1px solid #EFEBE3; background:#E1F1F8; color:#035E80;">$88</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#013042; border-bottom:1px solid #EFEBE3;">142</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#024059; font-weight:700; border-bottom:1px solid #EFEBE3;">49</td>
+                    </tr>
+                    <tr>
+                      <td style="text-align:left; padding:6px 9px; color:#024059; font-weight:700; border-bottom:1px solid #EFEBE3;">Meta Prospecting</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#013042; border-bottom:1px solid #EFEBE3;">$74K</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#013042; border-bottom:1px solid #EFEBE3;">4,900</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#013042; border-bottom:1px solid #EFEBE3;">0.40%</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#013042; border-bottom:1px solid #EFEBE3;">3.1%</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#013042; border-bottom:1px solid #EFEBE3;">702</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#013042; border-bottom:1px solid #EFEBE3;">270</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; border-bottom:1px solid #EFEBE3; color:#013042;">$105</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#013042; border-bottom:1px solid #EFEBE3;">70</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#024059; font-weight:700; border-bottom:1px solid #EFEBE3;">24</td>
+                    </tr>
+                    <tr>
+                      <td style="text-align:left; padding:6px 9px; color:#024059; font-weight:700; border-bottom:1px solid #EFEBE3;">Meta Retargeting</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#013042; border-bottom:1px solid #EFEBE3;">$34K</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#013042; border-bottom:1px solid #EFEBE3;">8,200</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#013042; border-bottom:1px solid #EFEBE3;">2.9%</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; border-bottom:1px solid #EFEBE3; background:#FBE3E6; color:#B0283C;">1.1%</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#013042; border-bottom:1px solid #EFEBE3;">470</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#013042; border-bottom:1px solid #EFEBE3;">300</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; border-bottom:1px solid #EFEBE3; background:#E1F1F8; color:#035E80;">$72</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#013042; border-bottom:1px solid #EFEBE3;">92</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#024059; font-weight:700; border-bottom:1px solid #EFEBE3;">34</td>
+                    </tr>
+                    <tr>
+                      <td style="text-align:left; padding:6px 9px; color:#024059; font-weight:700; border-bottom:1px solid #EFEBE3;">LinkedIn</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#013042; border-bottom:1px solid #EFEBE3;">$58K</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#013042; border-bottom:1px solid #EFEBE3;">2,900</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#013042; border-bottom:1px solid #EFEBE3;">0.76%</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#013042; border-bottom:1px solid #EFEBE3;">2.5%</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#013042; border-bottom:1px solid #EFEBE3;">290</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#013042; border-bottom:1px solid #EFEBE3;">210</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; border-bottom:1px solid #EFEBE3; background:#FBE3E6; color:#B0283C;">$200</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#013042; border-bottom:1px solid #EFEBE3;">58</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#024059; font-weight:700; border-bottom:1px solid #EFEBE3;">22</td>
+                    </tr>
+                    <tr>
+                      <td style="text-align:left; padding:6px 9px; color:#024059; font-weight:700; border-bottom:1px solid #EFEBE3;">Google Demand Gen</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#013042; border-bottom:1px solid #EFEBE3;">$32K</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#013042; border-bottom:1px solid #EFEBE3;">3,800</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#013042; border-bottom:1px solid #EFEBE3;">0.41%</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; border-bottom:1px solid #EFEBE3; background:#FBE3E6; color:#B0283C;">1.1%</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#013042; border-bottom:1px solid #EFEBE3;">240</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#013042; border-bottom:1px solid #EFEBE3;">110</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; border-bottom:1px solid #EFEBE3; color:#013042;">$133</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#013042; border-bottom:1px solid #EFEBE3;">24</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#024059; font-weight:700; border-bottom:1px solid #EFEBE3;">8</td>
+                    </tr>
+                    <tr>
+                      <td style="text-align:left; padding:6px 9px; color:#024059; font-weight:700; border-bottom:1px solid #EFEBE3;">Reddit</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#013042; border-bottom:1px solid #EFEBE3;">$22K</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#013042; border-bottom:1px solid #EFEBE3;">3,200</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#013042; border-bottom:1px solid #EFEBE3;">0.52%</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; border-bottom:1px solid #EFEBE3; background:#FBE3E6; color:#B0283C;">1.2%</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#013042; border-bottom:1px solid #EFEBE3;">180</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#013042; border-bottom:1px solid #EFEBE3;">92</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; border-bottom:1px solid #EFEBE3; color:#013042;">$122</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#013042; border-bottom:1px solid #EFEBE3;">18</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#024059; font-weight:700; border-bottom:1px solid #EFEBE3;">6</td>
+                    </tr>
+                    <tr>
+                      <td style="text-align:left; padding:6px 9px; color:#024059; font-weight:700; border-bottom:1px solid #EFEBE3;">OTT / CTV</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#013042; border-bottom:1px solid #EFEBE3;">$34K</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#6B7684; border-bottom:1px solid #EFEBE3;">—</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#013042; border-bottom:1px solid #EFEBE3;">—</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; border-bottom:1px solid #EFEBE3; background:#FBE3E6; color:#B0283C;">0.8%</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#013042; border-bottom:1px solid #EFEBE3;">110</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#013042; border-bottom:1px solid #EFEBE3;">55</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; border-bottom:1px solid #EFEBE3; background:#FBE3E6; color:#B0283C;">$309</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#013042; border-bottom:1px solid #EFEBE3;">40</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#024059; font-weight:700; border-bottom:1px solid #EFEBE3;">7</td>
+                    </tr>
+                    <tr style="background:#F7F5F2;">
+                      <td style="text-align:left; padding:7px 9px; color:#024059; font-weight:700; font-family:'Oswald',sans-serif;">Blended</td>
+                      <td style="text-align:right; padding:7px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#024059; font-weight:700;">$480K</td>
+                      <td style="text-align:right; padding:7px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#6B7684;">—</td>
+                      <td style="text-align:right; padding:7px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#6B7684;">—</td>
+                      <td style="text-align:right; padding:7px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#6B7684;">—</td>
+                      <td style="text-align:right; padding:7px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#024059; font-weight:700;">4,312</td>
+                      <td style="text-align:right; padding:7px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#024059; font-weight:700;">2,317</td>
+                      <td style="text-align:right; padding:7px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#0078A6; font-weight:700;">$111</td>
+                      <td style="text-align:right; padding:7px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#024059; font-weight:700;">640</td>
+                      <td style="text-align:right; padding:7px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#024059; font-weight:700;">222</td>
+                    </tr>
+                  </tbody>
+                </table></div>
+                </div>
+
+                <div style="display:flex; align-items:baseline; gap:10px; margin:22px 0 9px;">
+                  <span style="font-family:'Roboto Mono',ui-monospace,monospace; font-size:8.5px; letter-spacing:.06em; color:#024059; font-weight:500;">PROGRAM PERFORMANCE</span>
+                  <span style="font-size:8.5px; color:#6B7684;">Ten priority programs · Heat: CPL</span>
+                </div>
+                <div style="overflow-x:auto;">
+                <div class="tbl-wrap"><table style="width:100%; border-collapse:collapse; font-size:10px; white-space:nowrap;">
+                  <thead><tr style="background:#F2EEE7;">
+                    <th style="text-align:left; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; font-size:7.5px; letter-spacing:.04em; color:#6B7684; font-weight:500; border-bottom:1px solid #DED8CC;">PROGRAM</th>
+                    <th style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; font-size:7.5px; letter-spacing:.04em; color:#6B7684; font-weight:500; border-bottom:1px solid #DED8CC;">SPEND</th>
+                    <th style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; font-size:7.5px; letter-spacing:.04em; color:#6B7684; font-weight:500; border-bottom:1px solid #DED8CC;">LEADS</th>
+                    <th style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; font-size:7.5px; letter-spacing:.04em; color:#6B7684; font-weight:500; border-bottom:1px solid #DED8CC;">QUAL.</th>
+                    <th style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; font-size:7.5px; letter-spacing:.04em; color:#6B7684; font-weight:500; border-bottom:1px solid #DED8CC;">CPL</th>
+                    <th style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; font-size:7.5px; letter-spacing:.04em; color:#6B7684; font-weight:500; border-bottom:1px solid #DED8CC;">APPS</th>
+                    <th style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; font-size:7.5px; letter-spacing:.04em; color:#6B7684; font-weight:500; border-bottom:1px solid #DED8CC;">ENR.</th>
+                  </tr></thead>
+                  <tbody>
+                    <tr>
+                      <td style="text-align:left; padding:6px 9px; color:#024059; font-weight:700; border-bottom:1px solid #EFEBE3;">MS Computer Science</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#013042; border-bottom:1px solid #EFEBE3;">$92K</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#013042; border-bottom:1px solid #EFEBE3;">760</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#013042; border-bottom:1px solid #EFEBE3;">430</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; border-bottom:1px solid #EFEBE3; color:#013042;">$121</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#013042; border-bottom:1px solid #EFEBE3;">118</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#024059; font-weight:700; border-bottom:1px solid #EFEBE3;">41</td>
+                    </tr>
+                    <tr>
+                      <td style="text-align:left; padding:6px 9px; color:#024059; font-weight:700; border-bottom:1px solid #EFEBE3;">MS Cybersecurity</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#013042; border-bottom:1px solid #EFEBE3;">$74K</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#013042; border-bottom:1px solid #EFEBE3;">680</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#013042; border-bottom:1px solid #EFEBE3;">380</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; border-bottom:1px solid #EFEBE3; color:#013042;">$109</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#013042; border-bottom:1px solid #EFEBE3;">102</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#024059; font-weight:700; border-bottom:1px solid #EFEBE3;">36</td>
+                    </tr>
+                    <tr>
+                      <td style="text-align:left; padding:6px 9px; color:#024059; font-weight:700; border-bottom:1px solid #EFEBE3;">Online MBA</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#013042; border-bottom:1px solid #EFEBE3;">$68K</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#013042; border-bottom:1px solid #EFEBE3;">640</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#013042; border-bottom:1px solid #EFEBE3;">360</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; border-bottom:1px solid #EFEBE3; background:#E1F1F8; color:#035E80;">$106</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#013042; border-bottom:1px solid #EFEBE3;">96</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#024059; font-weight:700; border-bottom:1px solid #EFEBE3;">34</td>
+                    </tr>
+                    <tr>
+                      <td style="text-align:left; padding:6px 9px; color:#024059; font-weight:700; border-bottom:1px solid #EFEBE3;">MS Data Science &amp; AI</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#013042; border-bottom:1px solid #EFEBE3;">$58K</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#013042; border-bottom:1px solid #EFEBE3;">520</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#013042; border-bottom:1px solid #EFEBE3;">300</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; border-bottom:1px solid #EFEBE3; color:#013042;">$112</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#013042; border-bottom:1px solid #EFEBE3;">78</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#024059; font-weight:700; border-bottom:1px solid #EFEBE3;">28</td>
+                    </tr>
+                    <tr>
+                      <td style="text-align:left; padding:6px 9px; color:#024059; font-weight:700; border-bottom:1px solid #EFEBE3;">MS Health Informatics</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#013042; border-bottom:1px solid #EFEBE3;">$44K</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#013042; border-bottom:1px solid #EFEBE3;">430</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#013042; border-bottom:1px solid #EFEBE3;">240</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; border-bottom:1px solid #EFEBE3; background:#E1F1F8; color:#035E80;">$102</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#013042; border-bottom:1px solid #EFEBE3;">64</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#024059; font-weight:700; border-bottom:1px solid #EFEBE3;">22</td>
+                    </tr>
+                    <tr>
+                      <td style="text-align:left; padding:6px 9px; color:#024059; font-weight:700; border-bottom:1px solid #EFEBE3;">MS Construction Mgmt</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#013042; border-bottom:1px solid #EFEBE3;">$52K</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#013042; border-bottom:1px solid #EFEBE3;">410</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#013042; border-bottom:1px solid #EFEBE3;">210</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; border-bottom:1px solid #EFEBE3; background:#FBE3E6; color:#B0283C;">$127</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#013042; border-bottom:1px solid #EFEBE3;">58</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#024059; font-weight:700; border-bottom:1px solid #EFEBE3;">20</td>
+                    </tr>
+                    <tr>
+                      <td style="text-align:left; padding:6px 9px; color:#024059; font-weight:700; border-bottom:1px solid #EFEBE3;">MS Hospitality Mgmt</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#013042; border-bottom:1px solid #EFEBE3;">$40K</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#013042; border-bottom:1px solid #EFEBE3;">480</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#013042; border-bottom:1px solid #EFEBE3;">260</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; border-bottom:1px solid #EFEBE3; background:#E1F1F8; color:#035E80;">$83</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#013042; border-bottom:1px solid #EFEBE3;">72</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#024059; font-weight:700; border-bottom:1px solid #EFEBE3;">25</td>
+                    </tr>
+                    <tr>
+                      <td style="text-align:left; padding:6px 9px; color:#024059; font-weight:700; border-bottom:1px solid #EFEBE3;">MS Engineering Mgmt</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#013042; border-bottom:1px solid #EFEBE3;">$52K</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#013042; border-bottom:1px solid #EFEBE3;">392</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#013042; border-bottom:1px solid #EFEBE3;">210</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; border-bottom:1px solid #EFEBE3; background:#FBE3E6; color:#B0283C;">$133</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#013042; border-bottom:1px solid #EFEBE3;">54</td>
+                      <td style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#024059; font-weight:700; border-bottom:1px solid #EFEBE3;">16</td>
+                    </tr>
+                    <tr style="background:#F7F5F2;">
+                      <td style="text-align:left; padding:7px 9px; color:#024059; font-weight:700; font-family:'Oswald',sans-serif;">Top 8 of 10</td>
+                      <td style="text-align:right; padding:7px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#024059; font-weight:700;">$480K</td>
+                      <td style="text-align:right; padding:7px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#024059; font-weight:700;">4,312</td>
+                      <td style="text-align:right; padding:7px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#024059; font-weight:700;">2,317</td>
+                      <td style="text-align:right; padding:7px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#0078A6; font-weight:700;">$111</td>
+                      <td style="text-align:right; padding:7px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#024059; font-weight:700;">640</td>
+                      <td style="text-align:right; padding:7px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#024059; font-weight:700;">222</td>
+                    </tr>
+                  </tbody>
+                </table></div>
                 </div>
               </div>
             </div>
-            <p style="margin:11px 0 0; font-size:12.5px; line-height:1.55; color:#6B7684;"><strong style="font-family:'Oswald',sans-serif; font-weight:500; color:#024059; text-transform:uppercase; letter-spacing:.04em; font-size:11.5px;">The reporting layer · built for FIU</strong> &nbsp;Not a generic agency template. Manage the full funnel, watch blended CAC fall, and see down-funnel enrollment by program — in one always-on view.</p>
+            <p style="margin:11px 0 0; font-size:12.5px; line-height:1.55; color:#6B7684;"><strong style="font-family:'Oswald',sans-serif; font-weight:500; color:#024059; text-transform:uppercase; letter-spacing:.04em; font-size:11.5px;">The reporting layer · built for FIU</strong> &nbsp;Not a generic agency template. Filter by channel, program, and campaign; track CPL and qualified-lead trends; and read down-funnel enrollment by program — every channel and every priority program in one always-on view.</p>
           </div>
         </div>
       </div>
@@ -546,7 +830,7 @@
         
         <h3 style="font-family:'Oswald',sans-serif; font-weight:600; font-size:20px; color:#024059; margin:32px 0 4px;">Program by program — students and the revenue they bring.</h3>
         <p style="margin:0 0 14px; max-width:78ch; font-size:13.5px; color:#013042;">Today's net-new baseline, the Year-1 plan, and the <strong style="color:#024059;">new tuition each program produces</strong> under that plan. Revenue is shown <strong style="color:#024059;">after a 25% attrition rate</strong> (a 75% completion haircut), so it reflects students who actually finish.</p>
-        <table style="width:100%; border-collapse:collapse; margin-top:4px; font-size:13px;">
+        <div class="tbl-wrap"><table style="width:100%; border-collapse:collapse; margin-top:4px; font-size:13px;">
           <thead>
             <tr>
               <th style="font-family:'Oswald',sans-serif; font-weight:500; font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:#fff; background:#024059; padding:9px 12px; text-align:left;">Program</th>
@@ -569,7 +853,7 @@
             <tr style="background:#F7F5F2;"><td style="padding:8px 12px; border-bottom:1px solid #DED8CC; font-weight:500; color:#013042;">Doctor of Athletic Training</td><td style="padding:8px 12px; border-bottom:1px solid #DED8CC; text-align:right; font-family:'Roboto Mono',monospace;">8</td><td style="padding:8px 12px; border-bottom:1px solid #DED8CC; text-align:right; font-family:'Roboto Mono',monospace;">8</td><td style="padding:8px 12px; border-bottom:1px solid #DED8CC; text-align:right; font-family:'Roboto Mono',monospace; color:#6B7684;">organic-only</td><td style="padding:8px 12px; border-bottom:1px solid #DED8CC; text-align:right; font-family:'Roboto Mono',monospace; color:#024059; border-left:2px solid #DEF4FC;">$202K</td></tr>
             <tr style="background:#DEF4FC;"><td style="padding:9px 12px; font-weight:700; color:#024059;">Portfolio total</td><td style="padding:9px 12px; text-align:right; font-family:'Roboto Mono',monospace; font-weight:700; color:#024059;">161</td><td style="padding:9px 12px; text-align:right; font-family:'Roboto Mono',monospace; font-weight:700; color:#024059;">222</td><td style="padding:9px 12px; text-align:right; font-family:'Roboto Mono',monospace; font-weight:700; color:#024059;">+38%</td><td style="padding:9px 12px; text-align:right; font-family:'Roboto Mono',monospace; font-weight:700; color:#024059; border-left:2px solid #00AEEF;">~$4.72M</td></tr>
           </tbody>
-        </table>
+        </table></div>
         
 
         <p style="margin-top:16px; font-size:12.5px; color:#6B7684;">+20% is the floor we commit to; the per-program plan sums to +38% — modeled from your data, refined in Discovery, our aspiration rather than a guarantee. We hold media flat at <strong style="color:#024059;">$480K/year</strong>; growth comes from getting better, not spending more, as cost-per-enrollment falls and organic compounds. Year-1 new tuition (~$4.72M) grows with enrollment toward the ~$15.5M three-year figure; all revenue shown already reflects a 25% attrition rate.</p>
