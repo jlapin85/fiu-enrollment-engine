@@ -1,7 +1,6 @@
-# FIU Enrollment Engine — Proposal
+# FIU Enrollment Engine — Website
 
-Static proposal for FIU Office of Continuing Education, prepared by Campbell Learn.
+Single-page marketing site for FIU Office of Continuing Education, by Campbell Learn.
+Implemented from Claude Design source `FIU Enrollment Engine - Website.dc.html` (flattened to standalone static site, mobile-responsive).
 
-Implemented from the Claude Design source (`FIU Enrollment Engine - Proposal.dc.html`), flattened to a standalone static site.
-
-- Live: https://fiu-enrollment-engine.netlify.app
+- Live: https://fiu-enrollment-website.netlify.app
