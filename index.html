@@ -27,6 +27,7 @@
   html,body{ overflow-x:hidden; }
   .tbl-wrap{ overflow-x:auto; -webkit-overflow-scrolling:touch; min-width:0; }
   .tbl-wrap th, .tbl-wrap td{ white-space:nowrap; }
+  .tbl-hint{ display:none; }
   [style*="display:grid"] > *{ min-width:0; }
   @media (max-width:768px){
     nav{ padding:12px 16px !important; gap:12px !important; }
@@ -47,9 +48,16 @@
     [style*="font-size:34px"]{ font-size:24px !important; }
     [style*="font-size:32px"]{ font-size:23px !important; }
     [style*="padding:96px 24px"]{ padding:48px 18px !important; }
-    [style*="min-width:280px"]{ min-width:0 !important; }
-    [style*="min-width:300px"]{ min-width:0 !important; }
-    [style*="min-width:320px"]{ min-width:0 !important; }
+    /* #5 stat block + #6 bridge: stack flex cards full-width (do NOT zero their min-width) */
+    [style*="min-width:150px"]{ min-width:100% !important; }
+    [style*="min-width:280px"]{ min-width:100% !important; }
+    /* #7 reserve chart: shrink to fit */
+    [style*="height:180px"]{ gap:7px !important; }
+    [style*="justify-content:center"][style*="gap:8px"]{ gap:3px !important; }
+    [style*="max-width:46px"]{ max-width:34px !important; }
+    [style*="max-width:46px"] > div{ font-size:9px !important; }
+    /* #8 table scroll affordance */
+    .tbl-hint{ display:block; font-family:'Roboto Mono',ui-monospace,monospace; font-size:10.5px; letter-spacing:.06em; text-transform:uppercase; color:#0078A6; margin:0 0 6px; }
     img{ max-width:100% !important; height:auto; }
   }
 </style>
@@ -429,7 +437,7 @@
                   <span style="font-size:8.5px; color:#6B7684;">Heat: CVR · CPL</span>
                 </div>
                 <div style="overflow-x:auto;">
-                <div class="tbl-wrap"><table style="width:100%; border-collapse:collapse; font-size:10px; white-space:nowrap;">
+                <div class="tbl-hint" aria-hidden="true">Swipe to see all columns &rarr;</div><div class="tbl-wrap"><table style="width:100%; border-collapse:collapse; font-size:10px; white-space:nowrap;">
                   <thead><tr style="background:#F2EEE7;">
                     <th style="text-align:left; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; font-size:7.5px; letter-spacing:.04em; color:#6B7684; font-weight:500; border-bottom:1px solid #DED8CC;">CHANNEL</th>
                     <th style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; font-size:7.5px; letter-spacing:.04em; color:#6B7684; font-weight:500; border-bottom:1px solid #DED8CC;">SPEND</th>
@@ -560,7 +568,7 @@
                   <span style="font-size:8.5px; color:#6B7684;">Ten priority programs · Heat: CPL</span>
                 </div>
                 <div style="overflow-x:auto;">
-                <div class="tbl-wrap"><table style="width:100%; border-collapse:collapse; font-size:10px; white-space:nowrap;">
+                <div class="tbl-hint" aria-hidden="true">Swipe to see all columns &rarr;</div><div class="tbl-wrap"><table style="width:100%; border-collapse:collapse; font-size:10px; white-space:nowrap;">
                   <thead><tr style="background:#F2EEE7;">
                     <th style="text-align:left; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; font-size:7.5px; letter-spacing:.04em; color:#6B7684; font-weight:500; border-bottom:1px solid #DED8CC;">PROGRAM</th>
                     <th style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; font-size:7.5px; letter-spacing:.04em; color:#6B7684; font-weight:500; border-bottom:1px solid #DED8CC;">SPEND</th>
@@ -952,7 +960,7 @@
         
         <h3 style="font-family:'Oswald',sans-serif; font-weight:600; font-size:20px; color:#024059; margin:32px 0 4px;">Program by program — students and the revenue they bring.</h3>
         <p style="margin:0 0 14px; max-width:78ch; font-size:13.5px; color:#013042;">Today's net-new baseline, the Year-1 plan, and the <strong style="color:#024059;">new tuition each program produces</strong> under that plan. Revenue is shown <strong style="color:#024059;">after a 25% attrition rate</strong> (a 75% completion haircut), so it reflects students who actually finish.</p>
-        <div class="tbl-wrap"><table style="width:100%; border-collapse:collapse; margin-top:4px; font-size:13px;">
+        <div class="tbl-hint" aria-hidden="true">Swipe to see all columns &rarr;</div><div class="tbl-wrap"><table style="width:100%; border-collapse:collapse; margin-top:4px; font-size:13px;">
           <thead>
             <tr>
               <th style="font-family:'Oswald',sans-serif; font-weight:500; font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:#fff; background:#024059; padding:9px 12px; text-align:left;">Program</th>
