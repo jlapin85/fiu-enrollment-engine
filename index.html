@@ -21,43 +21,77 @@
   .pillcta:active{ transform:translateY(1px); }
   .teamcard{ transition:box-shadow .22s cubic-bezier(.2,.7,.2,1), transform .22s cubic-bezier(.2,.7,.2,1); }
   .teamcard:hover{ transform:translateY(-2px); box-shadow:0 8px 26px rgba(1,30,42,0.12); }
+
+  html,body{ overflow-x:hidden; }
+  .tbl-wrap{ overflow-x:auto; -webkit-overflow-scrolling:touch; min-width:0; }
+  .tbl-wrap th,.tbl-wrap td{ white-space:nowrap; }
+  .tbl-hint{ display:none; }
+  [style*="display: grid"] > *{ min-width:0; }
+  @media (max-width:768px){
+    nav{ padding:12px 16px !important; gap:12px !important; }
+    .navlink{ display:none !important; }
+    [style*="grid-template-columns: repeat(5, 1fr)"]{ grid-template-columns:repeat(2,1fr) !important; }
+    [style*="grid-template-columns: repeat(4, 1fr)"]{ grid-template-columns:repeat(2,1fr) !important; }
+    [style*="grid-template-columns: repeat(3, 1fr)"]{ grid-template-columns:1fr !important; }
+    [style*="grid-template-columns: 1fr 1fr 1fr"]{ grid-template-columns:1fr !important; }
+    [style*="grid-template-columns: 1fr 1fr;"]{ grid-template-columns:1fr !important; }
+    [style*="grid-template-columns: 1.05fr 1fr"]{ grid-template-columns:1fr !important; }
+    [style*="grid-template-columns: 72px 1fr"]{ grid-template-columns:42px 1fr !important; gap:14px !important; }
+    [style*="font-size: 80px"]{ font-size:40px !important; }
+    [style*="font-size: 66px"]{ font-size:34px !important; }
+    [style*="font-size: 58px"]{ font-size:32px !important; }
+    [style*="font-size: 52px"]{ font-size:30px !important; }
+    [style*="font-size: 46px"]{ font-size:29px !important; }
+    [style*="font-size: 42px"]{ font-size:27px !important; }
+    [style*="font-size: 38px"]{ font-size:25px !important; }
+    [style*="font-size: 34px"]{ font-size:24px !important; }
+    [style*="font-size: 32px"]{ font-size:23px !important; }
+    [style*="font-size: 22px"]{ font-size:20px !important; }
+    [style*="padding: 96px 24px"]{ padding:48px 18px !important; }
+    [style*="padding: 104px 24px"]{ padding:48px 18px !important; }
+    [style*="min-width: 150px"]{ min-width:100% !important; }
+    [style*="min-width: 280px"]{ min-width:100% !important; }
+    [style*="height: 180px"]{ gap:7px !important; }
+    [style*="justify-content: center"][style*="gap: 8px"]{ gap:3px !important; }
+    [style*="max-width: 46px"]{ max-width:34px !important; }
+    [style*="max-width: 46px"] > div{ font-size:9px !important; }
+    .tbl-hint{ display:block; font-family:'Roboto Mono',monospace; font-size:10.5px; letter-spacing:.06em; text-transform:uppercase; color:#0078A6; margin:0 0 6px; }
+    img{ max-width:100% !important; height:auto; }
+  }
 </style>
 
 <style id="mobile-opt">
   html,body{ overflow-x:hidden; }
   .tbl-wrap{ overflow-x:auto; -webkit-overflow-scrolling:touch; min-width:0; }
-  .tbl-wrap th, .tbl-wrap td{ white-space:nowrap; }
+  .tbl-wrap th,.tbl-wrap td{ white-space:nowrap; }
   .tbl-hint{ display:none; }
-  [style*="display:grid"] > *{ min-width:0; }
+  [style*="display:grid"] > *, [style*="display: grid"] > *{ min-width:0 }
   @media (max-width:768px){
     nav{ padding:12px 16px !important; gap:12px !important; }
     .navlink{ display:none !important; }
-    [style*="grid-template-columns:repeat(5,1fr)"]{ grid-template-columns:repeat(2,1fr) !important; }
-    [style*="grid-template-columns:repeat(4,1fr)"]{ grid-template-columns:repeat(2,1fr) !important; }
-    [style*="grid-template-columns:repeat(3,1fr)"]{ grid-template-columns:1fr !important; }
-    [style*="grid-template-columns:1fr 1fr 1fr"]{ grid-template-columns:1fr !important; }
-    [style*="grid-template-columns:1fr 1fr;"]{ grid-template-columns:1fr !important; }
-    [style*="grid-template-columns:1.05fr 1fr"]{ grid-template-columns:1fr !important; }
-    [style*="grid-template-columns:72px 1fr"]{ grid-template-columns:42px 1fr !important; gap:14px !important; }
-    [style*="font-size:80px"]{ font-size:40px !important; }
-    [style*="font-size:66px"]{ font-size:34px !important; }
-    [style*="font-size:58px"]{ font-size:32px !important; }
-    [style*="font-size:52px"]{ font-size:30px !important; }
-    [style*="font-size:42px"]{ font-size:27px !important; }
-    [style*="font-size:38px"]{ font-size:25px !important; }
-    [style*="font-size:34px"]{ font-size:24px !important; }
-    [style*="font-size:32px"]{ font-size:23px !important; }
-    [style*="padding:96px 24px"]{ padding:48px 18px !important; }
-    /* #5 stat block + #6 bridge: stack flex cards full-width (do NOT zero their min-width) */
-    [style*="min-width:150px"]{ min-width:100% !important; }
-    [style*="min-width:280px"]{ min-width:100% !important; }
-    /* #7 reserve chart: shrink to fit */
-    [style*="height:180px"]{ gap:7px !important; }
-    [style*="justify-content:center"][style*="gap:8px"]{ gap:3px !important; }
-    [style*="max-width:46px"]{ max-width:34px !important; }
-    [style*="max-width:46px"] > div{ font-size:9px !important; }
-    /* #8 table scroll affordance */
-    .tbl-hint{ display:block; font-family:'Roboto Mono',ui-monospace,monospace; font-size:10.5px; letter-spacing:.06em; text-transform:uppercase; color:#0078A6; margin:0 0 6px; }
+    [style*="grid-template-columns:repeat(5,1fr)"], [style*="grid-template-columns: repeat(5, 1fr)"]{ grid-template-columns:repeat(2,1fr) !important }
+    [style*="grid-template-columns:repeat(4,1fr)"], [style*="grid-template-columns: repeat(4, 1fr)"]{ grid-template-columns:repeat(2,1fr) !important }
+    [style*="grid-template-columns:repeat(3,1fr)"], [style*="grid-template-columns: repeat(3, 1fr)"]{ grid-template-columns:1fr !important }
+    [style*="grid-template-columns:1fr 1fr 1fr"], [style*="grid-template-columns: 1fr 1fr 1fr"]{ grid-template-columns:1fr !important }
+    [style*="grid-template-columns:1fr 1fr;"], [style*="grid-template-columns: 1fr 1fr;"]{ grid-template-columns:1fr !important }
+    [style*="grid-template-columns:1.05fr 1fr"], [style*="grid-template-columns: 1.05fr 1fr"]{ grid-template-columns:1fr !important }
+    [style*="grid-template-columns:72px 1fr"], [style*="grid-template-columns: 72px 1fr"]{ grid-template-columns:42px 1fr !important; gap:14px !important }
+    [style*="font-size:80px"], [style*="font-size: 80px"]{ font-size:40px !important }
+    [style*="font-size:66px"], [style*="font-size: 66px"]{ font-size:34px !important }
+    [style*="font-size:58px"], [style*="font-size: 58px"]{ font-size:32px !important }
+    [style*="font-size:52px"], [style*="font-size: 52px"]{ font-size:30px !important }
+    [style*="font-size:42px"], [style*="font-size: 42px"]{ font-size:27px !important }
+    [style*="font-size:38px"], [style*="font-size: 38px"]{ font-size:25px !important }
+    [style*="font-size:34px"], [style*="font-size: 34px"]{ font-size:24px !important }
+    [style*="font-size:32px"], [style*="font-size: 32px"]{ font-size:23px !important }
+    [style*="padding:96px 24px"], [style*="padding: 96px 24px"]{ padding:48px 18px !important }
+    [style*="min-width:150px"], [style*="min-width: 150px"]{ min-width:100% !important }
+    [style*="min-width:280px"], [style*="min-width: 280px"]{ min-width:100% !important }
+    [style*="height:180px"], [style*="height: 180px"]{ gap:7px !important }
+    [style*="justify-content:center"][style*="gap:8px"], [style*="justify-content: center"][style*="gap: 8px"]{ gap:3px !important; }
+    [style*="max-width:46px"], [style*="max-width: 46px"]{ max-width:34px !important }
+    [style*="max-width:46px"] > div, [style*="max-width: 46px"] > div{ font-size:9px !important }
+    .tbl-hint{ display:block; font-family:'Roboto Mono',monospace; font-size:10.5px; letter-spacing:.06em; text-transform:uppercase; color:#0078A6; margin:0 0 6px; }
     img{ max-width:100% !important; height:auto; }
   }
 </style>
@@ -436,8 +470,9 @@
                   <span style="font-family:'Roboto Mono',ui-monospace,monospace; font-size:8.5px; letter-spacing:.06em; color:#024059; font-weight:500;">CHANNEL PERFORMANCE</span>
                   <span style="font-size:8.5px; color:#6B7684;">Heat: CVR · CPL</span>
                 </div>
-                <div style="overflow-x:auto;">
-                <div class="tbl-hint" aria-hidden="true">Swipe to see all columns &rarr;</div><div class="tbl-wrap"><table style="width:100%; border-collapse:collapse; font-size:10px; white-space:nowrap;">
+                <div class="tbl-hint" aria-hidden="true">Swipe to see all columns →</div>
+                <div class="tbl-wrap">
+                <table style="width:100%; border-collapse:collapse; font-size:10px; white-space:nowrap;">
                   <thead><tr style="background:#F2EEE7;">
                     <th style="text-align:left; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; font-size:7.5px; letter-spacing:.04em; color:#6B7684; font-weight:500; border-bottom:1px solid #DED8CC;">CHANNEL</th>
                     <th style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; font-size:7.5px; letter-spacing:.04em; color:#6B7684; font-weight:500; border-bottom:1px solid #DED8CC;">SPEND</th>
@@ -560,15 +595,16 @@
                       <td style="text-align:right; padding:7px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#024059; font-weight:700;">222</td>
                     </tr>
                   </tbody>
-                </table></div>
+                </table>
                 </div>
 
                 <div style="display:flex; align-items:baseline; gap:10px; margin:22px 0 9px;">
                   <span style="font-family:'Roboto Mono',ui-monospace,monospace; font-size:8.5px; letter-spacing:.06em; color:#024059; font-weight:500;">PROGRAM PERFORMANCE</span>
                   <span style="font-size:8.5px; color:#6B7684;">Ten priority programs · Heat: CPL</span>
                 </div>
-                <div style="overflow-x:auto;">
-                <div class="tbl-hint" aria-hidden="true">Swipe to see all columns &rarr;</div><div class="tbl-wrap"><table style="width:100%; border-collapse:collapse; font-size:10px; white-space:nowrap;">
+                <div class="tbl-hint" aria-hidden="true">Swipe to see all columns →</div>
+                <div class="tbl-wrap">
+                <table style="width:100%; border-collapse:collapse; font-size:10px; white-space:nowrap;">
                   <thead><tr style="background:#F2EEE7;">
                     <th style="text-align:left; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; font-size:7.5px; letter-spacing:.04em; color:#6B7684; font-weight:500; border-bottom:1px solid #DED8CC;">PROGRAM</th>
                     <th style="text-align:right; padding:6px 9px; font-family:'Roboto Mono',ui-monospace,monospace; font-size:7.5px; letter-spacing:.04em; color:#6B7684; font-weight:500; border-bottom:1px solid #DED8CC;">SPEND</th>
@@ -661,7 +697,7 @@
                       <td style="text-align:right; padding:7px 9px; font-family:'Roboto Mono',ui-monospace,monospace; color:#024059; font-weight:700;">222</td>
                     </tr>
                   </tbody>
-                </table></div>
+                </table>
                 </div>
               </div>
             </div>
@@ -750,6 +786,44 @@
 
       <div style="display:flex; align-items:center; gap:12px; background:#F5EFE6; border-left:3px solid #EA3C55; padding:18px 24px; margin-top:28px;">
         <p style="margin:0; font-size:15px; line-height:1.5; color:#013042;">The strategic depth of a boutique consultancy and the execution horsepower of a full-service agency — <strong style="color:#024059;">one team, pointed at one outcome</strong>: enrolled students, and the evidence to prove which programs sustain themselves.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WHY WE'RE INNOVATIVE ============ -->
+  <section id="why" style="background:#fff; border-top:1px solid #DED8CC;">
+    <div style="max-width:1120px; margin:0 auto; padding:104px 24px;">
+      <div style="display:flex; align-items:center; gap:10px; font-family:'Oswald',sans-serif; font-weight:500; font-size:13px; letter-spacing:.22em; text-transform:uppercase; color:#EA3C55; margin-bottom:16px;">
+        <span style="width:10px; height:10px; border-radius:50%; background:#EA3C55; flex:none;"></span>Why We're Innovative
+      </div>
+      <h2 style="font-family:'Oswald',sans-serif; font-weight:600; font-size:46px; line-height:1.06; color:#024059; margin:0 0 18px; max-width:20ch;">A different kind of partner — not a channel vendor, not an OPM.</h2>
+      <p style="margin:0 0 48px; max-width:64ch; font-size:18px; line-height:1.55; color:#013042;">Most agencies launch and run the same old creative. We're built differently — story first, AI as a system, and the willingness to build whatever it takes to win.</p>
+
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:24px;">
+        <div style="background:#F7F5F2; border-top:3px solid #00AEEF; padding:32px 28px 36px;">
+          <h3 style="font-family:'Oswald',sans-serif; font-weight:600; font-size:22px; line-height:1.1; color:#024059; margin:0 0 12px;">Storytelling, not the same old creative</h3>
+          <p style="font-size:15px; line-height:1.6; color:#013042; margin:0;">Most of the market launches and runs the creative everyone else does. We don't. We start from each program's truest story — and that narrative drives every ad, page, and email.</p>
+        </div>
+        <div style="background:#F7F5F2; border-top:3px solid #00AEEF; padding:32px 28px 36px;">
+          <h3 style="font-family:'Oswald',sans-serif; font-weight:600; font-size:22px; line-height:1.1; color:#024059; margin:0 0 12px;">A systems approach to AI</h3>
+          <p style="font-size:15px; line-height:1.6; color:#013042; margin:0;">AI isn't a gimmick here — it's how we produce the highest-quality work. It lets us get the most out of Discovery and understand more about your students than anyone else in the market.</p>
+        </div>
+        <div style="background:#F7F5F2; border-top:3px solid #00AEEF; padding:32px 28px 36px;">
+          <h3 style="font-family:'Oswald',sans-serif; font-weight:600; font-size:22px; line-height:1.1; color:#024059; margin:0 0 12px;">A proprietary intelligence dashboard</h3>
+          <p style="font-size:15px; line-height:1.6; color:#013042; margin:0;">Our own AI dashboard reads creative and performance data together to surface patterns humans simply can't see — what's resonating, what's fatiguing, and what to build next.</p>
+        </div>
+        <div style="background:#F7F5F2; border-top:3px solid #00AEEF; padding:32px 28px 36px;">
+          <h3 style="font-family:'Oswald',sans-serif; font-weight:600; font-size:22px; line-height:1.1; color:#024059; margin:0 0 12px;">We'll build software to solve it</h3>
+          <p style="font-size:15px; line-height:1.6; color:#013042; margin:0;">An OPM pushes the pre-built tech it's sunk years into. We don't carry that baggage — we find the right solution for each problem, and our AI enablement means we'll build software when that's what it takes. You own it.</p>
+        </div>
+        <div style="background:#F7F5F2; border-top:3px solid #00AEEF; padding:32px 28px 36px;">
+          <h3 style="font-family:'Oswald',sans-serif; font-weight:600; font-size:22px; line-height:1.1; color:#024059; margin:0 0 12px;">GEO, not just SEO</h3>
+          <p style="font-size:15px; line-height:1.6; color:#013042; margin:0;">Not yesterday's playbook. Generative-engine optimization, paid media sized to the creative it actually needs, landing pages we build ourselves, and the agility to move fast.</p>
+        </div>
+        <div style="background:#F7F5F2; border-top:3px solid #00AEEF; padding:32px 28px 36px;">
+          <h3 style="font-family:'Oswald',sans-serif; font-weight:600; font-size:22px; line-height:1.1; color:#024059; margin:0 0 12px;">Not beholden to the OPM model</h3>
+          <p style="font-size:15px; line-height:1.6; color:#013042; margin:0;">A fixed fee, never a share of tuition. No revenue share, no 10-year lock-in. Your growth stays yours.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -960,7 +1034,9 @@
         
         <h3 style="font-family:'Oswald',sans-serif; font-weight:600; font-size:20px; color:#024059; margin:32px 0 4px;">Program by program — students and the revenue they bring.</h3>
         <p style="margin:0 0 14px; max-width:78ch; font-size:13.5px; color:#013042;">Today's net-new baseline, the Year-1 plan, and the <strong style="color:#024059;">new tuition each program produces</strong> under that plan. Revenue is shown <strong style="color:#024059;">after a 25% attrition rate</strong> (a 75% completion haircut), so it reflects students who actually finish.</p>
-        <div class="tbl-hint" aria-hidden="true">Swipe to see all columns &rarr;</div><div class="tbl-wrap"><table style="width:100%; border-collapse:collapse; margin-top:4px; font-size:13px;">
+        <div class="tbl-hint" aria-hidden="true">Swipe to see all columns →</div>
+        <div class="tbl-wrap">
+        <table style="width:100%; border-collapse:collapse; margin-top:4px; font-size:13px;">
           <thead>
             <tr>
               <th style="font-family:'Oswald',sans-serif; font-weight:500; font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:#fff; background:#024059; padding:9px 12px; text-align:left;">Program</th>
@@ -983,7 +1059,8 @@
             <tr style="background:#F7F5F2;"><td style="padding:8px 12px; border-bottom:1px solid #DED8CC; font-weight:500; color:#013042;">Doctor of Athletic Training</td><td style="padding:8px 12px; border-bottom:1px solid #DED8CC; text-align:right; font-family:'Roboto Mono',monospace;">8</td><td style="padding:8px 12px; border-bottom:1px solid #DED8CC; text-align:right; font-family:'Roboto Mono',monospace;">8</td><td style="padding:8px 12px; border-bottom:1px solid #DED8CC; text-align:right; font-family:'Roboto Mono',monospace; color:#6B7684;">organic-only</td><td style="padding:8px 12px; border-bottom:1px solid #DED8CC; text-align:right; font-family:'Roboto Mono',monospace; color:#024059; border-left:2px solid #DEF4FC;">$202K</td></tr>
             <tr style="background:#DEF4FC;"><td style="padding:9px 12px; font-weight:700; color:#024059;">Portfolio total</td><td style="padding:9px 12px; text-align:right; font-family:'Roboto Mono',monospace; font-weight:700; color:#024059;">161</td><td style="padding:9px 12px; text-align:right; font-family:'Roboto Mono',monospace; font-weight:700; color:#024059;">222</td><td style="padding:9px 12px; text-align:right; font-family:'Roboto Mono',monospace; font-weight:700; color:#024059;">+38%</td><td style="padding:9px 12px; text-align:right; font-family:'Roboto Mono',monospace; font-weight:700; color:#024059; border-left:2px solid #00AEEF;">~$4.72M</td></tr>
           </tbody>
-        </table></div>
+        </table>
+        </div>
         
 
         <p style="margin-top:16px; font-size:12.5px; color:#6B7684;">+20% is the floor we commit to; the per-program plan sums to +38% — modeled from your data, refined in Discovery, our aspiration rather than a guarantee. We hold media flat at <strong style="color:#024059;">$480K/year</strong>; growth comes from getting better, not spending more, as cost-per-enrollment falls and organic compounds. Year-1 new tuition (~$4.72M) grows with enrollment toward the ~$15.8M three-year figure; all revenue shown already reflects a 25% attrition rate.</p>
